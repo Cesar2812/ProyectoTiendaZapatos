@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Zapateria Online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <!--Seccion de la cabezera-->
+    <header class="cabezera">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>STORE-SHOES</a>
+
+        <!--Items de opciones de la barra-->
+        <nav class="barra_navegacion">
+            <a href="#Home">Home</a>
+            <a href="#Caracteristicas">Caracteristicas</a>
+            <a href="#lista-1">Productos</a>
+            <a href="#Categorias">Categorias</a>
+            <a href="#Review">Personal</a>
+            <a href="#Info">Info</a>
+        </nav>
+
+        <!--Botones de busquedas,carrito y usuario-->
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <!--Barra de busqueda la cual esta animada desde JS-->
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="Buscar Por...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+
+
+        <!--Imagenes de los productos para el carrito de compras-->
+        <div id="shopping-cart">
+            <table id="lista-carrito">
+
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <a href="#" id="vaciar-carrito" class="btn">Vaciar Carrito</a>
+        </div>
+
+
+
+
+
+
+
+        <!--Venta de Logueo-->
+        <form action="" class="login">
+            <h3>Inicio De Sesion</h3>
+            <input type="email" placeholder="Escriba su Correo" class="box">
+            <input type="password" placeholder="Escriba su Contraseña" class="box">
+            <p>¿Olvido su contraseña?
+                <a href="#">Click Aqui</a>
+            </p>
+            <p>¿No tiene una Cuenta?
+                <a href="#">Crear Una</a>
+            </p>
+            <input type="submit" value="Acceder" class="btn">
+        </form>
+    </header>
+    <!--Fin de la Cabecera-->
+
+    
+
+
+
+
+
+    
+
+    <!--Seccion Home-->
+    <section class="Home" id="Home">
+        <div class="content">
+            <h3>STORE<span>Online</span>SHOES</h3>
+            <p> Ofrecemos calzado Deportivo y Casual.</p>
+            <a href="#" class="btn">Compra Ahora</a>
+        </div>
+    </section>
+    <!-- Fin de la Seccion Home-->
+
+    <!--Seccion de Caracteristicas-->
+    <section class="Caracteristicas" id="Caracteristicas">
+        <h1 class="heading">Tenemos las Mejores<span>Caracteristicas</span></h1>
+
+        <div class="caja-contenedora">
+            <div class="box">
+                <img src="assets/img/atencion.webp" alt="">
+                <h3>Atencion Al Cliente</h3>
+                <p> Le atenderemos a como usted se lo merece</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/EntregaDelyvery(1).jpg" alt="">
+                <h3>Entrega A Domicilio</h3>
+                <p>Le Ofrecemos Entrega Delivery Hasta la Puerta de su casa</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/PumaSuedeModa(1).jpg" alt="">
+                <h3>Calidad Y Moda</h3>
+                <p>Ofrecemos la mejor calidad en calzado Casual</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la Seccion Features-->
+
+
+
+
+
+    <!--Seccion de Prodcutos-->
+    <section class="Productos" id="lista-1">
+        <h1 class="heading">Catalogo De<span> Productos</span></h1>
+        <div class="swiper producto-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="assets/img/puma1.webp" alt="">
+                    <h3>Puma Suede</h3>
+                    <div class="precio">C$1200</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button" onclick="agregarCarritoTest(infoElemento = {
+                            imagen: 'assets/img/puma1.webp',
+                            titulo: 'Puma Suede',
+                            precio: 'C$1200',
+                            id: 1
+                        })" class="agregar-carrito btn" data-id="1">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/vans1.webp" alt="">
+                    <h3>Vans-Off The Wall</h3>
+                    <div class="precio">C$1300</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button" onclick="agregarCarritoTest(infoElemento = {
+                                                imagen: 'assets/img/vans1.webp',
+                                                titulo: 'Vans-Off The Wall',
+                                                precio: 'C$1300',
+                                                id: 2
+                                            })" class="agregar-carrito btn" data-id="2">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/NikeBlazaers.png" alt="">
+                    <h3>Nike-Blazers Low</h3>
+                    <div class="precio">C$1480</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button" onclick="agregarCarritoTest(infoElemento = {
+                                                                imagen: 'assets/img/NikeBlazaers.png',
+                                                                titulo: 'Nike-Blazers Low',
+                                                                precio: 'C$1480',
+                                                                id: 3
+                                                            })" class="agregar-carrito btn" data-id="3">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/Sperry-removebg-preview(1).png" alt="">
+                    <h3>Sperry Top-Sider</h3>
+                    <div class="precio">C$1600</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button" onclick="agregarCarritoTest(infoElemento = {
+                                                                                    imagen: 'assets/img/Sperry-removebg-preview(1).png',
+                                                                                    titulo: 'Sperry Top-Sider',
+                                                                                    precio: 'C$1600',
+                                                                                    id: 4
+                                                                                })" class="agregar-carrito btn"
+                        data-id="4">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper producto-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="assets/img/Jordan_1_-removebg-preview.png" alt="">
+                    <h3>Air Jordan</h3>
+                    <div class="precio">C$1600</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button" onclick="agregarCarritoTest(infoElemento = {
+                                                                                                        imagen: 'assets/img/Jordan_1_-removebg-preview.png',
+                                                                                                        titulo: 'Air Jordan',
+                                                                                                        precio: 'C$1600',
+                                                                                                        id: 5
+                                                                                                    })"
+                        class="agregar-carrito btn" data-id="5">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/Tiguers-removebg-preview.png" alt="">
+                    <h3>Otnisuka Tiger</h3>
+                    <div class="precio">C$1860</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button"
+                        onclick="agregarCarritoTest(infoElemento = {
+                                                                                                                                         imagen: 'assets/img/Tiguers-removebg-preview.png',
+                                                                                                                                           titulo: 'Otnisuka Tiger',
+                                                                                                                                           precio: 'C$1860',
+                                                                                                                                         id: 6
+                                                                                                                                        })"
+                        class="agregar-carrito btn" data-id="6">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/ConversePaul.webp" alt="">
+                    <h3>Converse All-Start</h3>
+                    <div class="precio">C$850</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button"
+                        onclick="agregarCarritoTest(infoElemento = {
+                                                                                                                                                             imagen: 'assets/img/ConversePaul.webp',
+                                                                                                                                                               titulo: 'Converse All-Start',
+                                                                                                                                                               precio: 'C$850',
+                                                                                                                                                             id: 7
+                                                                                                                                            })"
+                        class="agregar-carrito btn" data-id="7">
+                        Añadir al Carrito
+                    </button>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/NikeLebron.webp" alt="">
+                    <h3>Nike-Lebron</h3>
+                    <div class="precio">C$2000</div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button type="button"
+                        onclick="agregarCarritoTest(infoElemento = {
+                                                                                                                                                                                 imagen: 'assets/img/NikeLebron.webp',
+                                                                                                                                                                                   titulo: 'Nike-Lebron',
+                                                                                                                                                                                   precio: 'C$2000',
+                                                                                                                                                                                 id: 8
+                                                                                                                                                                })"
+                        class="agregar-carrito btn" data-id="8">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Fin de la Seccion Productos-->
+
+
+
+
+    <!--Seccion de Categorias-->
+    <section class="Categorias" id="Categorias">
+        <h1 class="heading">Nuestras<span>Categorias</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="assets/img/Categoria Casual.jpg" alt="">
+                <h3>Categoria Casual</h3>
+                <p>10% de Descuento al comprar dos pares</p>
+                <a href="#" class="btn">Compra Ahora</a>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/Categoria Tenis.jpg" alt="">
+                <h3>Categoria De Tenis</h3>
+                <p>15% de Descuento al comprar dos pares</p>
+                <a href="#" class="btn">Compra Ahora</a>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/Deporte.jpg" alt="">
+                <h3>Categoria Deportiva</h3>
+                <p>10% de Descuento al comprar dos pares</p>
+                <a href="#" class="btn">Compra Ahora</a>
+            </div>
+        </div>
+
+    </section>
+    <!--Fin de la seccion de categorias-->
+
+
+
+
+
+
+    <!--Seccion de Personal-->
+    <section class="Review" id="Review">
+        <h1 class="heading">Nuestros<span>Colaboradores</span></h1>
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="assets/img/Marlon.jpg" alt="">
+                    <p>Delibery.</p>
+                    <h3>Marlon Chamorro</h3>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/Cesar.jpg" alt="">
+                    <p>Vendedor.</p>
+                    <h3>Cesar Cerda</h3>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/Karla.jpg" alt="">
+                    <p>Vendedora.</p>
+                    <h3>Karla Abea</h3>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="assets/img/Fernanda.jpg" alt="">
+                    <p>Gerente.</p>
+                    <h3>Fernanda Alvarado</h3>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Fin de la seccion de personal-->
+
+
+
+
+
+    <!--Seccion de informacion-->
+    <section class="Info" id="Info">
+        <h1 class="heading">Nuestra<span>Informacion</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="assets/img/Ubicacion.JPG" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="https://www.google.com/maps" target="_blank"><i
+                                class="fa-solid fa-location-dot"></i>Ver en el Mapa</a>
+
+                    </div>
+                    <h3>Ubicacion</h3>
+                    <p>Ubicados en Carretera Vieja a Leon</p>
+                    <a href="#" class="btn">Leer Mas</a>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/Seervicio1.jpg" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fa-solid fa-phone"></i>Contactenos</a>
+                        <a href="#"><i class=""></i>2552-7845</a>
+                    </div>
+                    <h3>Entrega a Domicilio</h3>
+                    <p>Entrega de calzado hasta su hogar</p>
+                    <a href="#" class="btn">Leer Mas</a>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="assets/img/Marca.webp" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="https://us.puma.com/us/es/men/shoes/suede-mens-sneakers" target="_blank"><i
+                                class="fas fa-shopping-bag"></i>Marcas</a>
+                    </div>
+                    <h3>Nuestras Marcas</h3>
+                    <p>Le Ofrecemos las mejores Marcas</p>
+                    <a href="#" class="btn">Leer Mas</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--fin de la seccion de infromacion-->
+
+
+    <!--seccion del Footer-->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>STORE-SHOES <i class="fas fa-shopping-basket"></i></h3>
+                <p>Encuentranos en Nuestras Redes Sociales</p>
+                <div class="share">
+                    <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook-f"></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Infromacion General <i class="fab fa-wpforms"></i></h3>
+                <a href="https://www.whatsapp.com" target="_blank" class="links"><i class="fab fa-whatsapp"></i>
+                    +505-78216684</a>
+                <br />
+                <a href="#" class="links"><i class="fa-solid fa-phone"></i> 2552-7845</a>
+                <br />
+                <a href="https://mail.google.com" target="_blank" class="links"><i class="fas fa-envelope"></i>
+                    storeshoes@gmail.com</a>
+                <br />
+                <a href="https://www.google.com/maps" target="_blank" class="links"><i
+                        class="fas fa-map-marker-alt"></i> Carretera Vieja a Leon</a>
+            </div>
+
+            <div class="box">
+                <h3>Items Page</h3>
+                <a href="#Home" class="links"><i class="fas fa-arrow-right"></i> Home</a>
+                <a href="#Caracteristicas" class="links"><i class="fas fa-arrow-right"></i> Caracteristicas</a>
+                <a href="#lista-1" class="links"><i class="fas fa-arrow-right"></i> Productos</a>
+                <a href="#Categorias" class="links"><i class="fas fa-arrow-right"></i> Categorias</a>
+                <a href="#Review" class="links"><i class="fas fa-arrow-right"></i> Personal</a>
+                <a href="#Info" class="links"><i class="fas fa-arrow-right"></i> Informacion</a>
+            </div>
+
+            <div class="box">
+                <h3>Registrate</h3>
+                <p>Registrate en Nuestra Pagina y Realiza tu pago Online</p>
+                <input type="email" placeholder="tu correo" class="email">
+                <input type="submit" value="Registrate" class="btn">
+                <img src="assets/img/paypal-credit-card-logo.png" class="payment-img" alt="">
+            </div>
+        </div>
+
+        <div class="credit">Creado Por <span> Web Designer: Cesar Jose Cerda Maldonado</span>|Derechos Reservados</div>
+    </section>
+
+
+    <!--final de la seccion del footer-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/funciones.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,772 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;1,6..12,200;1,6..12,400&family=Nunito:ital,wght@0,300;1,200;1,300&family=Poppins:ital,wght@0,300;0,400;1,100;1,400;1,600&display=swap');
+
+/*Estilo general de la pagina*/
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background: #eee;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+.heading span {
+    background: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+
+}
+
+/* Colores para el menu de navegacion*/
+:root {
+    --orange: #0ddf18;
+    --black: #130f40;
+    --ligth: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --outline: .1rem solid rgba(0, 0, 0, .1);
+    --outline-hover: .2rem solid var(--black);
+
+}
+
+/*------Inicio de la barra de Navegacion------*/
+/*Cabezera , barra de navegacion e iconos*/
+.cabezera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+/*Logo de la cabezera*/
+.cabezera .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+
+}
+
+
+.cabezera .logo i {
+    color: var(--orange);
+}
+
+/*Barra de navehacion*/
+.cabezera .barra_navegacion a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+}
+
+/*Funcionalidad de cambio de color al pasar el cursor por los items de la barra de navegacion*/
+.cabezera .barra_navegacion a:hover {
+    color: var(--orange);
+}
+
+/*Iconos de la cabezera y barra de navegacion*/
+.cabezera .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-right: .3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Cambio de color al pulsar click en losmiconos de la cabezera incliyendo usuario, carrito y busqueda*/
+.cabezera .icons div:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+/*Boton del menu*/
+#menu-btn {
+    display: none;
+}
+
+/*Estilo de la barra de busqueda*/
+.cabezera .search-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+/*Animacion de la barra de busqueda con JavaScrip*/
+.cabezera .search-form.active {
+    right: 2rem;
+    transition: .2s linear;
+}
+
+/*Input de escritura para buscar*/
+.cabezera .search-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.cabezera .search-form label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/*Evento de cambio de color de la Lupa*/
+.cabezera .search-form label:hover {
+    color: var(--orange);
+}
+
+/*Estilo del carrito de compras de la barra de navegacion*/
+.cabezera #shopping-cart {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    padding: 20px;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+    display: block;
+    z-index: 1;
+    min-width: 350px;
+}
+
+/*Animacion al hacer click en el carrito de compras con JavaScript*/
+.cabezera #shopping-cart.active {
+    right: 2rem;
+    transition: .2s linear;
+}
+
+.cabezera #shopping-cart table {
+    width: 100%;
+
+}
+
+
+.cabezera #shopping-cart table th,td{
+    color: black;
+    font-family: Poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align:center;
+    align-items:center
+}
+
+
+
+/*Barrilito de eliminar*/
+.cabezera #shopping-cart .fa-trash {
+    
+    cursor: pointer;
+    color: var(--ligth);
+    padding: 5px 10px;
+    font-weight: 850;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+/*Cambio de color del barrilito de eliminar*/
+.cabezera #shopping-cart  .fa-trash:hover {
+    color:red;
+}
+
+
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background: none;
+
+}
+
+.btn:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+
+.cabezera #shopping-cart .btn {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+}
+
+
+
+/*Estilo de la ventana de Logueo*/
+.cabezera .login {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+/*Evento click sobre el boton de usuario para que aparezca la ventana de logueo*/
+.cabezera .login.active {
+    right: 2rem;
+    transition: .2s linear;
+}
+
+.cabezera .login h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.cabezera .login .box {
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.cabezera .login p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--ligth);
+}
+
+.cabezera .login p a {
+    color: var(--orange);
+    text-decoration: underline;
+
+}
+
+
+
+/*--------------Fin de la barra de navegacion-------*/
+
+/*Seccion Home*/
+.Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(78, 78, 87, 0.616), rgba(94, 94, 102, 0.75)), url(/assets/img/banner.webp);
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+
+.Home .content {
+    text-align: center;
+    width: 60rem;
+}
+
+.Home .content h3 {
+    color: white;
+    font-size: 3rem;
+}
+
+.Home .content h3 span {
+    color: #0ce90c;
+}
+
+.Home .content p {
+    color: white;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+
+
+
+
+/*Seccion de Caracteristcas*/
+.Caracteristicas .caja-contenedora {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.Caracteristicas .caja-contenedora .box {
+    padding: 3rem 2rem;
+    background: #fff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.Caracteristicas .caja-contenedora .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0;
+}
+
+
+.Caracteristicas .caja-contenedora .box img {
+
+    height: 15rem;
+    margin: 1rem 0;
+}
+
+.Caracteristicas .caja-contenedora .box h3 {
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: var(--black);
+}
+
+.Caracteristicas .caja-contenedora .box p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--ligth);
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+
+
+/*Seccion de Productos*/
+.Productos .producto-slider {
+    padding: 1rem;
+    align-items: center;
+}
+
+.Productos .producto-slider:first-child {
+    margin-bottom: 2rem;
+}
+
+.Productos .producto-slider .box {
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .1s linear;
+    cursor: pointer;
+    align-items: center;
+}
+
+.Productos .producto-slider .box:hover {
+    outline-offset: 0rem;
+    outline: var(--outline-hover);
+}
+
+.Productos .producto-slider .box img {
+    height: 25rem;
+}
+
+.Productos .producto-slider .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+
+}
+
+.Productos .producto-slider .box .precio {
+    font-size: 2rem;
+    color: var(--ligth);
+    padding: .5rem 0;
+
+}
+
+.Productos .producto-slider .box .estrellas i {
+    font-size: 1.7rem;
+    color: var(--orange);
+    padding: .5rem 0;
+}
+
+
+
+
+
+/*Seccion de Categorias*/
+.Categorias .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+}
+
+.Categorias .box-container .box {
+    padding: 3rem 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+}
+
+.Categorias .box-container .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.Categorias .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.Categorias .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.Categorias .box-container .box p {
+    font-size: 1.7rem;
+    color: var(--ligth);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+
+
+
+/*Seccion de Trabajadores*/
+.Review .review-slider {
+    padding: 1rem;
+
+}
+
+.Review .review-slider .box {
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .1s linear;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Review .review-slider .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.Review .review-slider .box img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.Review .review-slider .box p {
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: var(--ligth);
+    font-size: 1.5rem;
+}
+
+.Review .review-slider .box h3 {
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+}
+
+.Review .review-slider .box .estrellas i {
+    color: var(--orange);
+    font-size: 1.7rem;
+
+}
+
+
+/*Seccion de Infromacion*/
+.Info .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+}
+
+.Info .box-container .box {
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+}
+
+.Info .box-container .box img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Info .box-container .box .content {
+    padding: 2rem;
+}
+
+.Info .box-container .box .content .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--border);
+}
+
+.Info .box-container .box .content .icons a {
+    color: var(--ligth);
+    font-size: 1.5rem;
+}
+
+.Info .box-container .box .content .icons a i {
+    color: var(--orange);
+    padding-right: .5rem;
+
+}
+
+.Info .box-container .box .content .icons a:hover {
+    color: var(--black);
+}
+
+.Info .box-container .box .content h3 {
+    line-height: 1.8;
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: .5rem 0;
+
+}
+
+.Info .box-container .box .content p {
+    line-height: 1.8;
+    color: var(--ligth);
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+
+/*Footer Section*/
+.footer {
+    background: #fff;
+
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i {
+    color: var(--orange);
+
+}
+
+
+.footer .box-container .box .links {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+    color: var(--orange);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i {
+    padding-right: 2rem;
+}
+
+.footer .box-container .box p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: var(--ligth);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .share a {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--black);
+    margin-left: .2rem;
+    background: #eee;
+    text-align: center;
+
+}
+
+.footer .box-container .box .share a:hover {
+    background: var(--orange);
+    color: #fff;
+
+}
+
+.footer .box-container .box .email {
+    width: 90%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+
+}
+
+.footer .box-container .box .payment-img {
+    margin-top: 2rem;
+    height: 7.5rem;
+
+}
+
+.footer .credit {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border-top: var(--border);
+
+}
+
+.footer .credit span {
+    color: var(--orange);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Responsividad*/
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .cabezera {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .cabezera .search-form {
+        width: 90%;
+
+    }
+
+    .cabezera .barra_navegacion {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .cabezera .barra_navegacion.active {
+        right: 2rem;
+        transition: .2s linear;
+
+    }
+
+    .cabezera .barra_navegacion a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
