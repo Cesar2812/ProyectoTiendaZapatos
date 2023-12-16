@@ -307,7 +307,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(78, 78, 87, 0.616), rgba(94, 94, 102, 0.75)), url(/assets/img/banner.webp);
+    background-image: linear-gradient(rgba(78, 78, 87, 0.616), rgba(94, 94, 102, 0.75)), url(../../assets/img/banner.webp);
     background-position: center;
     background-size: cover;
     padding-top: 17rem;
